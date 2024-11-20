@@ -7,7 +7,7 @@
 
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
+    <router-link to="/home">Home</router-link> |
     <router-link to="/adduser">Add User</router-link> |
     <router-link to="/assignclothes">Assign Clothes</router-link> |
     <router-link to="/userslist">Users List</router-link> |
