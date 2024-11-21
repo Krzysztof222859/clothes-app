@@ -1,11 +1,3 @@
-import { createApp } from 'vue'
-import { VueFire, VueFireAuth } from 'vuefire'
-import App from './App.vue'
-import './registerServiceWorker'
-import router from './router'
-import 'bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './assets/styles.css'
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
