@@ -1,17 +1,16 @@
 <script>
 import { useRouter } from "vue-router";
-import { addUser } from "../services/usersService";
+import { addOrder } from "../services/ordersService";
 import { reactive, ref } from "vue";
 </script>
 
 <script setup>
 // Reactive object to store user input
-const newUser = reactive({
+const newOrder = reactive({
   name: "",
-  surname: "",
-  nickname: "",
-  address: "",
-  clothes: [],
+  person: "",
+  size: "",
+  status: "",
 });
 
 // State to control the visibility of the success popup
@@ -26,10 +25,10 @@ function redirectToHome() {
 }
 
 // Function to handle user addition
-async function handleAddUser() {
+async function handleAddOrder() {
   try {
-    const userId = await addUser({ ...newUser }); // Spread to ensure a plain object
-    console.log("User added with ID:", userId);
+    const orderId = await addOrder({ ...newOrder }); // Spread to ensure a plain object
+    console.log("Order added with ID:", orderId);
 
     // Show the success popup
     showSuccessPopup.value = true;
@@ -40,24 +39,24 @@ async function handleAddUser() {
     }, 3000);
 
     // Reset the form
-    Object.keys(newUser).forEach((key) => (newUser[key] = ""));
+    Object.keys(newOrder).forEach((key) => (newOrder[key] = ""));
   } catch (error) {
-    console.error("Failed to add user:", error);
-    alert("Failed to add user. Please try again.");
+    console.error("Failed to add order:", error);
+    alert("Failed to add order. Please try again.");
   }
 }
 </script>
 
 <template>
-  <form @submit.prevent="handleAddUser">
-    <h1 class="lato-light">Wprowadź dane osoby:</h1>
+  <form @submit.prevent="handleAddOrder">
+    <h1 class="lato-light">Wprowadź nazwę:</h1>
     <div class="container addingUser-container rounded">
       <div class="col cols">
         <input
           type="text"
           class="form-control"
-          placeholder="Imię"
-          v-model="newUser.name"
+          placeholder="Nazwa"
+          v-model="newOrder.name"
           required
         />
       </div>
@@ -65,8 +64,8 @@ async function handleAddUser() {
         <input
           type="text"
           class="form-control"
-          placeholder="Nazwisko"
-          v-model="newUser.surname"
+          placeholder="Osoba"
+          v-model="newOrder.person"
           required
         />
       </div>
@@ -74,18 +73,18 @@ async function handleAddUser() {
         <input
           type="text"
           class="form-control"
-          id="inputNickname"
-          placeholder="Ksywka"
-          v-model="newUser.nickname"
+          id="inputSize"
+          placeholder="Rozmiar"
+          v-model="newOrder.size"
         />
       </div>
       <div class="form-group cols">
         <input
           type="text"
           class="form-control"
-          id="inputAddress"
-          placeholder="Adres"
-          v-model="newUser.address"
+          id="inputStatus"
+          placeholder="Status"
+          v-model="newOrder.status"
         />
       </div>
     </div>
