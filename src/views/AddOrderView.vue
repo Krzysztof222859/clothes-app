@@ -10,7 +10,7 @@ const newOrder = reactive({
   name: "",
   person: "",
   size: "",
-  status: "",
+  status: "Zamówione",
 });
 
 // State to control the visibility of the success popup
@@ -55,8 +55,8 @@ async function handleAddOrder() {
         <input
           type="text"
           class="form-control"
-          placeholder="Nazwa"
-          v-model="newOrder.name"
+          placeholder="Osoba"
+          v-model="newOrder.person"
           required
         />
       </div>
@@ -64,8 +64,8 @@ async function handleAddOrder() {
         <input
           type="text"
           class="form-control"
-          placeholder="Osoba"
-          v-model="newOrder.person"
+          placeholder="Nazwa"
+          v-model="newOrder.name"
           required
         />
       </div>
@@ -76,15 +76,6 @@ async function handleAddOrder() {
           id="inputSize"
           placeholder="Rozmiar"
           v-model="newOrder.size"
-        />
-      </div>
-      <div class="form-group cols">
-        <input
-          type="text"
-          class="form-control"
-          id="inputStatus"
-          placeholder="Status"
-          v-model="newOrder.status"
         />
       </div>
     </div>
