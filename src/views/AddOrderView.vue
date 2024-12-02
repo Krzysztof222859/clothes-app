@@ -50,38 +50,41 @@ async function handleAddOrder() {
 <template>
   <form @submit.prevent="handleAddOrder">
     <h1 class="lato-light">Wprowadź nazwę:</h1>
-    <div class="container addingUser-container rounded">
-      <div class="col cols">
+
+    <div class="container addingOrder-container rounded">
+  
         <input
           type="text"
-          class="form-control"
+          class="form-control el1"
           placeholder="Osoba"
           v-model="newOrder.person"
           required
         />
-      </div>
-      <div class="col cols">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Nazwa"
-          v-model="newOrder.name"
-          required
-        />
-      </div>
-      <div class="form-group cols">
-        <input
-          type="text"
-          class="form-control"
-          id="inputSize"
-          placeholder="Rozmiar"
-          v-model="newOrder.size"
-        />
-      </div>
+
+        <div class="col1">
+          <input
+            type="text"
+            class="form-control el2"
+            placeholder="Nazwa"
+            v-model="newOrder.name"
+            required
+          />
+        
+          <input
+            type="text"
+            class="form-control el3"
+            id="inputSize"
+            placeholder="Rozmiar"
+            v-model="newOrder.size"
+          />
+        </div>
     </div>
     <div class="container">
-      <div class="col">
-        <button type="submit" class="btn btn-secondary btn-first">Dodaj</button>
+      <div class="col2">
+        <button type="submit" 
+          class="btn btn-secondary btn-first"
+        >
+          Dodaj</button>
         <button
           type="button"
           class="btn btn-secondary btn-second"
@@ -111,6 +114,22 @@ async function handleAddOrder() {
 </template>
 
 <style scoped>
+
+.col1 {
+  display:flex;
+  width: 400px;
+  
+}
+
+.el2{
+  flex: 8;
+}
+
+.el3{
+  flex: 2;
+}
+
+
 .btn {
   border-color: rgb(36, 107, 174);
   border-width: 2px;
