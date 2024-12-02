@@ -12,33 +12,25 @@ const router = useRouter();
       <button
         type="button"
         class="btn btn-secondary btn-first"
-        @click="router.push({ name: 'adduser' })"
+        @click="router.push({ name: 'addorder' })"
       >
-        Dodaj użytkownika
+        Dodaj zamówienie
       </button>
       <h2 style="font-size: 15px">---</h2>
       <button
         type="button"
         class="btn btn-secondary btn-second"
-        @click="router.push({ name: 'assignclothes' })"
+        @click="router.push({ name: 'clothesordered' })"
       >
-        Przypisz ubrania
-      </button>
-      <h2 style="font-size: 15px">---</h2>
-      <button
-        type="button"
-        class="btn btn-secondary btn-third"
-        @click="router.push({ name: 'userslist' })"
-      >
-        Pobierz listę użytkowników
+        Lista zamówionych ubrań
       </button>
       <h2 style="font-size: 15px">---</h2>
       <button
         type="button"
         class="btn btn-secondary btn-fourth"
-        @click="router.push({ name: 'clotheslist' })"
+        @click="router.push({ name: 'clothesgiven' })"
       >
-        Pobierz listę ubrań
+        Lista wydanych ubrań
       </button>
     </div>
   </div>

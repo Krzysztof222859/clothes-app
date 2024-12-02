@@ -9,27 +9,21 @@ const routes = [
       component: HomeView,
     },
     {
-      path: '/adduser',
-      name: 'adduser',
-      component: () => import('../views/AddUserView.vue'),
+      path: '/addorder',
+      name: 'addorder',
+      component: () => import('../views/AddOrderView.vue'),
     },
     {
-      path: '/assignclothes',
-      name: 'assignclothes',
-      component: () => import('../views/AssignClothesView.vue'),
+      path: '/clothesordered',
+      name: 'clothesordered',
+      component: () => import('../views/ClothesOrderedView.vue'),
     },
     {
-      path: '/clotheslist',
-      name: 'clotheslist',
+      path: '/clothesgiven',
+      name: 'clothesgiven',
       props: true,
-      component: () => import('../views/ClothesListView.vue')
-    },
-    {
-      path: '/userslist',
-      name: 'userslist',
-      component: () => import('../views/UsersListView.vue')
-    },
-  
+      component: () => import('../views/ClothesGivenView.vue')
+    }
   ]
   
   const router = createRouter({

@@ -8,10 +8,9 @@
 <template>
   <nav>
     <router-link to="/home">Home</router-link> |
-    <router-link to="/adduser">Add User</router-link> |
-    <router-link to="/assignclothes">Assign Clothes</router-link> |
-    <router-link to="/userslist">Users List</router-link> |
-    <router-link to="/clotheslist">Clothes List</router-link>
+    <router-link to="/addorder">Add Order</router-link> |
+    <router-link to="/clothesordered">Clothes Ordered</router-link> |
+    <router-link to="/clothesgiven">Clothes Given</router-link> |
   </nav>
   <router-view style="padding-top: 0px;"/>
 </template>
