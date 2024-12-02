@@ -78,9 +78,7 @@ async function handleAddOrder() {
           v-model="newOrder.size"
         />
       </div>
-    </div>
-    <div class="container">
-      <div class="col">
+      <div class="button-wrapper">
         <button type="submit" class="btn btn-secondary btn-first">Dodaj</button>
         <button
           type="button"
@@ -119,6 +117,15 @@ async function handleAddOrder() {
 .item-field-wrapper {
   display: flex;
   width: 50%;
+  min-width: 550px;
+  gap: 0.4rem;
+}
+
+.button-wrapper {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  margin-top: 20px;
   min-width: 550px;
   gap: 0.4rem;
 }
@@ -170,11 +177,12 @@ async function handleAddOrder() {
 
 .btn {
   height: 55px;
-  width: 30%;
+  width: 100%;
   font-size: 1em;
-  margin-left: 5px;
-  margin-right: 5px;
+  /* margin-left: 5px;
+  margin-right: 5px; */
   margin-top: 20px;
+  border-width: 3px;
 }
 
 .form-control {
@@ -263,8 +271,12 @@ async function handleAddOrder() {
 }
 
 @media (max-width: 600px) {
+  .lato-light {
+    font-size: 35px;
+  }
   .item-field-wrapper,
-  .person-field-wrapper {
+  .person-field-wrapper,
+  .button-wrapper {
     width: 100%;
     min-width: unset;
   }
