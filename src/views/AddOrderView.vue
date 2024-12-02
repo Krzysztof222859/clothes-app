@@ -111,9 +111,14 @@ async function handleAddOrder() {
 </template>
 
 <style scoped>
+.addingOrder-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .item-field-wrapper {
   display: flex;
-  width: 40vw;
+  width: 50%;
   min-width: 400px;
   gap: 0.4rem;
 }
@@ -122,7 +127,7 @@ async function handleAddOrder() {
 }
 .person-field-wrapper {
   display: flex;
-  width: 40vw;
+  width: 50%;
   min-width: 400px;
 }
 
