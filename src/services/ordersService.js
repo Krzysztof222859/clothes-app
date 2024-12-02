@@ -6,6 +6,7 @@ import {
   doc,
   getDoc,
   getDocs,
+  updateDoc,
 } from "firebase/firestore";
 
 const ORDERS_COLLECTION = "orders"; // Define the collection name
@@ -55,6 +56,19 @@ export const getOrderById = async (id) => {
     }
   } catch (error) {
     console.error("Error getting order: ", error);
+    throw error;
+  }
+};
+
+export const changeOrderStatus = async (id) => {
+  try {
+    const orderRef = doc(db, ORDERS_COLLECTION, id);
+    await updateDoc(orderRef, {
+      status: "Wydane",
+    });
+    console.log("Order status changed to 'Wydane' for ID:", id);
+  } catch (error) {
+    console.error("Error changing order status: ", error);
     throw error;
   }
 };

@@ -39,7 +39,11 @@ async function handleAddOrder() {
     }, 3000);
 
     // Reset the form
-    Object.keys(newOrder).forEach((key) => (newOrder[key] = ""));
+    Object.keys(newOrder).forEach((key) => {
+      if (key !== "status") {
+        newOrder[key] = "";
+      }
+    });
   } catch (error) {
     console.error("Failed to add order:", error);
     alert("Failed to add order. Please try again.");
