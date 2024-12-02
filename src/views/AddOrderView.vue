@@ -119,7 +119,7 @@ async function handleAddOrder() {
 .item-field-wrapper {
   display: flex;
   width: 50%;
-  min-width: 400px;
+  min-width: 550px;
   gap: 0.4rem;
 }
 .el1 {
@@ -128,7 +128,7 @@ async function handleAddOrder() {
 .person-field-wrapper {
   display: flex;
   width: 50%;
-  min-width: 400px;
+  min-width: 550px;
 }
 
 .el2 {
@@ -137,6 +137,7 @@ async function handleAddOrder() {
 
 .el3 {
   flex: 2;
+  min-width: 0;
 }
 
 .btn {
@@ -258,6 +259,31 @@ async function handleAddOrder() {
 @keyframes fill {
   100% {
     box-shadow: inset 0px 0px 0px 30px #7ac142;
+  }
+}
+
+@media (max-width: 600px) {
+  .item-field-wrapper,
+  .person-field-wrapper {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .form-control {
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .addingOrder-container {
+    width: 100%;
+  }
+
+  .form-control::placeholder {
+    font-size: 16px;
   }
 }
 </style>
