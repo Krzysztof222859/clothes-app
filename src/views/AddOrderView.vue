@@ -52,7 +52,7 @@ async function handleAddOrder() {
     <h1 class="lato-light">Wprowadź nazwę:</h1>
 
     <div class="container addingOrder-container rounded">
-  
+      <div class="person-field-wrapper">
         <input
           type="text"
           class="form-control el1"
@@ -60,31 +60,28 @@ async function handleAddOrder() {
           v-model="newOrder.person"
           required
         />
+      </div>
+      <div class="item-field-wrapper">
+        <input
+          type="text"
+          class="form-control el2"
+          placeholder="Nazwa"
+          v-model="newOrder.name"
+          required
+        />
 
-        <div class="col1">
-          <input
-            type="text"
-            class="form-control el2"
-            placeholder="Nazwa"
-            v-model="newOrder.name"
-            required
-          />
-        
-          <input
-            type="text"
-            class="form-control el3"
-            id="inputSize"
-            placeholder="Rozmiar"
-            v-model="newOrder.size"
-          />
-        </div>
+        <input
+          type="text"
+          class="form-control el3"
+          id="inputSize"
+          placeholder="Rozmiar"
+          v-model="newOrder.size"
+        />
+      </div>
     </div>
     <div class="container">
-      <div class="col2">
-        <button type="submit" 
-          class="btn btn-secondary btn-first"
-        >
-          Dodaj</button>
+      <div class="col">
+        <button type="submit" class="btn btn-secondary btn-first">Dodaj</button>
         <button
           type="button"
           class="btn btn-secondary btn-second"
@@ -114,21 +111,34 @@ async function handleAddOrder() {
 </template>
 
 <style scoped>
-
-.col1 {
-  display:flex;
-  width: 400px;
-  
+.addingOrder-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.item-field-wrapper {
+  display: flex;
+  width: 50%;
+  min-width: 550px;
+  gap: 0.4rem;
+}
+.el1 {
+  flex: 1;
+}
+.person-field-wrapper {
+  display: flex;
+  width: 50%;
+  min-width: 550px;
 }
 
-.el2{
+.el2 {
   flex: 8;
 }
 
-.el3{
+.el3 {
   flex: 2;
+  min-width: 0;
 }
-
 
 .btn {
   border-color: rgb(36, 107, 174);
@@ -170,7 +180,7 @@ async function handleAddOrder() {
 .form-control {
   border-color: rgb(36, 107, 174);
   border-width: 3px;
-  width: 400px;
+  width: 40vw;
   height: 45px;
   margin-bottom: 30px;
   font-family: "Calibri";
@@ -249,6 +259,31 @@ async function handleAddOrder() {
 @keyframes fill {
   100% {
     box-shadow: inset 0px 0px 0px 30px #7ac142;
+  }
+}
+
+@media (max-width: 600px) {
+  .item-field-wrapper,
+  .person-field-wrapper {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .form-control {
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .addingOrder-container {
+    width: 100%;
+  }
+
+  .form-control::placeholder {
+    font-size: 16px;
   }
 }
 </style>
