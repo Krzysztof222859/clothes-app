@@ -12,7 +12,7 @@
     <router-link to="/clothesordered">Clothes Ordered</router-link> |
     <router-link to="/clothesgiven">Clothes Given</router-link> |
   </nav>
-  <router-view style="padding-top: 0px;"/>
+  <router-view style="padding-top: 0px" />
 </template>
 
 <!-- <style scoped>
@@ -31,7 +31,6 @@
 </style>  -->
 
 <style>
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -52,5 +51,4 @@ nav a {
 nav a.router-link-exact-active {
   color: #42b983;
 }
-
 </style>

@@ -6,7 +6,7 @@ const router = useRouter();
 
 <template>
   <div class="container">
-    <h1 class="logo">Clothes Appp</h1>
+    <h1 class="logo">Clothes App</h1>
     <h2 class="lato-light primary-text">Wybierz czynność:</h2>
     <div class="container-mt-12">
       <button
