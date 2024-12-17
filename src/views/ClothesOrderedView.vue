@@ -23,9 +23,9 @@ const changeStatus = async (id) => {
 onMounted(async () => {
   try {
     const orders = await getAllOrders();
-    orderedClothes.value = orders.filter(
-      (order) => order.status === "Zamówione"
-    );
+    orderedClothes.value = orders
+      .filter((order) => order.status === "Zamówione")
+      .sort((a, b) => a.person.localeCompare(b.person)); // Sortowanie alfabetyczne po "Osoba"
   } catch (error) {
     console.error("Error fetching orders: ", error);
   }
